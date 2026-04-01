@@ -117,19 +117,7 @@ if (contactForm) {
   contactForm.addEventListener("submit", () => {
     const btn = contactForm.querySelector("button[type='submit']");
     if (!btn) return;
-    const originalText = btn.textContent;
     btn.textContent = "Sending...";
     btn.disabled = true;
-
-    setTimeout(() => {
-      btn.textContent = "Message sent!";
-      btn.style.opacity = "0.75";
-      setTimeout(() => {
-        contactForm.reset();
-        btn.textContent = originalText;
-        btn.disabled = false;
-        btn.style.opacity = "1";
-      }, 1600);
-    }, 700);
   });
 }
