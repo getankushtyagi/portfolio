@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Ankush Tyagi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body data-page="about">
+  <div class="bg-noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="./index.html">AT</a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Enable light theme">Light</button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+      <nav id="siteNav" class="site-nav">
+        <a href="./index.html" data-nav="home">Home</a>
+        <a href="./about.html" data-nav="about">About</a>
+        <a href="./projects.html" data-nav="projects">Projects</a>
+        <a href="./experience.html" data-nav="experience">Experience</a>
+        <a href="./skills.html" data-nav="skills">Skills</a>
+        <a href="./resume.html" data-nav="resume">Resume</a>
+        <a href="./contact.html" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="page-head">
+        <h1 class="page-title">About Me</h1>
+        <p class="page-subtitle">Senior Software Developer with 4+ years of experience building cloud-native backend systems, AI-driven products, and scalable platforms across Python, Node.js, and Laravel.</p>
+      </div>
+
+      <div class="cards three">
+        <article class="card">
+          <h3>Product Engineering</h3>
+          <p>I architect and deliver backend-first applications across SaaS, commerce, internal systems, and operational platforms using Django, DRF, FastAPI, and PostgreSQL.</p>
+        </article>
+        <article class="card">
+          <h3>AI Systems</h3>
+          <p>I build LLM-powered workflows with OpenAI API and Claude, implement custom AI agents with MCP servers, and design RAG pipelines with Elasticsearch.</p>
+        </article>
+        <article class="card">
+          <h3>Scale and Reliability</h3>
+          <p>My work includes Kafka-based event streaming, Celery and Redis async processing, payment gateway integrations, and AWS deployment with strong observability.</p>
+        </article>
+      </div>
+
+      <section class="section" style="padding-bottom: 0">
+        <div class="panel">
+          <h2 class="section-title">Highlights</h2>
+          <ul class="list">
+            <li>Serving 10,000+ concurrent users with sub-200ms API response times in production workloads.</li>
+            <li>Hands-on with Python, Django, Node.js, Laravel, Kafka, and Kubernetes-oriented deployment practices.</li>
+            <li>Reduced manual effort by 60% by building AI-powered features and autonomous agent workflows.</li>
+            <li>Improved query performance by 40% through Django ORM optimization and PostgreSQL indexing strategies.</li>
+            <li>Delivered zero-downtime releases through CI/CD pipelines and cloud-ready infrastructure.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Ankush Tyagi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

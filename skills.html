@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills | Ankush Tyagi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body data-page="skills">
+  <div class="bg-noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="./index.html">AT</a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Enable light theme">Light</button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+      <nav id="siteNav" class="site-nav">
+        <a href="./index.html" data-nav="home">Home</a>
+        <a href="./about.html" data-nav="about">About</a>
+        <a href="./projects.html" data-nav="projects">Projects</a>
+        <a href="./experience.html" data-nav="experience">Experience</a>
+        <a href="./skills.html" data-nav="skills">Skills</a>
+        <a href="./resume.html" data-nav="resume">Resume</a>
+        <a href="./contact.html" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="page-head">
+        <h1 class="page-title">Technical Skills</h1>
+        <p class="page-subtitle">A practical stack shaped by product delivery, reliability, AI integration, and cloud-native backend development.</p>
+      </div>
+
+      <div class="cards three">
+        <article class="card">
+          <h3>Languages</h3>
+          <p>Python, JavaScript and Node.js, PHP, Go (Basic)</p>
+        </article>
+        <article class="card">
+          <h3>Frameworks</h3>
+          <p>Django, Django REST Framework, FastAPI, NestJS, React, Next.js, Laravel</p>
+        </article>
+        <article class="card">
+          <h3>AI and LLM</h3>
+          <p>OpenAI API, Claude, LangChain, MCP Servers, Custom AI Agents, RAG Pipelines, Prompt Engineering</p>
+        </article>
+        <article class="card">
+          <h3>Databases</h3>
+          <p>PostgreSQL, MySQL, Redis, Elasticsearch</p>
+        </article>
+        <article class="card">
+          <h3>Messaging and Tasks</h3>
+          <p>Apache Kafka, Celery, Redis Task Queues, AWS SQS</p>
+        </article>
+        <article class="card">
+          <h3>Cloud and DevOps</h3>
+          <p>AWS (EC2, S3, Lambda, RDS, CloudWatch, SQS), Docker, Nginx, Apache, Git, Linux, CI/CD</p>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Ankush Tyagi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

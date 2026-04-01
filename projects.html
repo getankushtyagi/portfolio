@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Ankush Tyagi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body data-page="projects">
+  <div class="bg-noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="./index.html">AT</a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Enable light theme">Light</button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+      <nav id="siteNav" class="site-nav">
+        <a href="./index.html" data-nav="home">Home</a>
+        <a href="./about.html" data-nav="about">About</a>
+        <a href="./projects.html" data-nav="projects">Projects</a>
+        <a href="./experience.html" data-nav="experience">Experience</a>
+        <a href="./skills.html" data-nav="skills">Skills</a>
+        <a href="./resume.html" data-nav="resume">Resume</a>
+        <a href="./contact.html" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="page-head">
+        <h1 class="page-title">Selected Projects</h1>
+        <p class="page-subtitle">Production and domain-driven systems built across AI, HR intelligence, health operations, commerce, and internal automation.</p>
+      </div>
+
+      <div class="cards three">
+        <article class="card">
+          <h3>AgentForge - Multi-Agent AI System (Flagship)</h3>
+          <p>Designed a software-company simulation using collaborative AI agents to generate structured delivery artifacts with deterministic orchestration.</p>
+          <p><strong>Stack:</strong> Python, LangGraph, Gemini, Chroma (planned)</p>
+          <p><strong>Pipeline:</strong> PRD Agent, Architect Agent, Backend Engineer Agent, QA Agent</p>
+          <p><strong>Engineering Depth:</strong> LangGraph state passing, structured outputs, deterministic workflow, and role-based separation.</p>
+          <p><strong>Roadmap:</strong> Code generation agent, execution layer, vector memory (RAG), and inter-agent feedback loops.</p>
+        </article>
+        <article class="card">
+          <h3>PGMind - AI Chatbot SaaS Platform</h3>
+          <p>Built a multi-tenant SaaS chatbot with document and URL-based training using RAG architecture and intelligent LLM routing.</p>
+          <p><strong>Stack:</strong> Django, OpenAI API, Claude, Elasticsearch, Stripe</p>
+        </article>
+        <article class="card">
+          <h3>Navigator - HR Intelligence Agent</h3>
+          <p>Developed custom AI agents using MCP protocol to automate performance summaries and reduce manual HR review workload.</p>
+          <p><strong>Stack:</strong> Django, LLM Pipelines, MCP Servers, Custom AI Agents</p>
+        </article>
+        <article class="card">
+          <h3>ASHAConnect - Health Worker Platform</h3>
+          <p>Designed an operations platform for ASHA workers with reliable rural sync, beneficiary tracking, and AI-assisted multilingual guidance.</p>
+          <p><strong>Stack:</strong> Django, Kafka, AWS, REST API, LLM Integration</p>
+        </article>
+        <article class="card">
+          <h3>Cedarwood - Real-Time Operations</h3>
+          <p>Implemented real-time attendance and trial booking workflows with WebSockets and high-frequency transactional consistency.</p>
+          <p><strong>Stack:</strong> Django Channels, WebSockets, PostgreSQL, AWS RDS</p>
+        </article>
+        <article class="card">
+          <h3>GrayPorter - E-Commerce Backend</h3>
+          <p>Delivered a full e-commerce backend with unified payment abstraction and cloud media architecture.</p>
+          <p><strong>Stack:</strong> Django, AWS EC2, S3, Stripe, Klarna, PayPal, Apple Pay</p>
+        </article>
+        <article class="card">
+          <h3>Squareboat CRM - Internal System</h3>
+          <p>Created an RBAC-driven CRM with background automation and Kafka-based reporting streams for business workflows.</p>
+          <p><strong>Stack:</strong> Django, Celery, Redis, Kafka, PostgreSQL</p>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Ankush Tyagi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

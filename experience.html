@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience | Ankush Tyagi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body data-page="experience">
+  <div class="bg-noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="./index.html">AT</a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Enable light theme">Light</button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+      <nav id="siteNav" class="site-nav">
+        <a href="./index.html" data-nav="home">Home</a>
+        <a href="./about.html" data-nav="about">About</a>
+        <a href="./projects.html" data-nav="projects">Projects</a>
+        <a href="./experience.html" data-nav="experience">Experience</a>
+        <a href="./skills.html" data-nav="skills">Skills</a>
+        <a href="./resume.html" data-nav="resume">Resume</a>
+        <a href="./contact.html" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="page-head">
+        <h1 class="page-title">Experience</h1>
+        <p class="page-subtitle">Hands-on engineering across backend architecture, AI automation, cloud infrastructure, and high-traffic production systems.</p>
+      </div>
+
+      <div class="timeline">
+        <article class="panel timeline-item">
+          <h3>Senior Software Engineer L2 - Squareboat Solutions Pvt. Ltd.</h3>
+          <p>Duration: Apr 2023 - Present | Gurugram</p>
+          <p>Architected scalable Django and DRF services serving 10,000+ concurrent users with sub-200ms response times.</p>
+          <p>Built AI-powered product features using OpenAI API and Claude, including MCP servers and custom autonomous AI agents that reduced manual effort by 60%.</p>
+          <p>Designed RAG pipelines with Elasticsearch and developed secure APIs with JWT, OAuth2, and RBAC deployed on AWS with Docker and Kafka integration.</p>
+          <p>Managed Celery and Redis async queues and integrated Stripe, Razorpay, Klarna, and PayPal payment gateways.</p>
+        </article>
+        <article class="panel timeline-item">
+          <h3>Associate Software Developer - ValueCoders Services LLP</h3>
+          <p>Duration: Jan 2022 - Apr 2023 | Noida</p>
+          <p>Developed RESTful backend modules and APIs using Python, Django, and Laravel while collaborating with React frontend integrations over DRF.</p>
+          <p>Optimized ORM queries and PostgreSQL indexing to improve query performance by 40% and delivered zero-downtime releases through CI/CD pipelines.</p>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Ankush Tyagi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume | Ankush Tyagi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body data-page="resume">
+  <div class="bg-noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="./index.html">AT</a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Enable light theme">Light</button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+      <nav id="siteNav" class="site-nav">
+        <a href="./index.html" data-nav="home">Home</a>
+        <a href="./about.html" data-nav="about">About</a>
+        <a href="./projects.html" data-nav="projects">Projects</a>
+        <a href="./experience.html" data-nav="experience">Experience</a>
+        <a href="./skills.html" data-nav="skills">Skills</a>
+        <a href="./resume.html" data-nav="resume">Resume</a>
+        <a href="./contact.html" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="page-head">
+        <h1 class="page-title">Resume Library</h1>
+        <p class="page-subtitle">Role-specific resumes tailored for backend and full stack opportunities. Download your preferred version.</p>
+      </div>
+
+      <div class="resume-grid">
+        <article class="resume-card">
+          <h3>Django & Python</h3>
+          <p>Specialized for backend engineering, AI systems, and full-stack Python roles.</p>
+          <a href="/assets/Ankush_Tyagi_Resume_Django.pdf" class="btn" download>Download PDF</a>
+        </article>
+        <article class="resume-card">
+          <h3>Node.js</h3>
+          <p>Tailored for Node.js backend, API development, and JavaScript-first positions.</p>
+          <a href="/assets/Ankush_Tyagi_Resume_NodeJS.pdf" class="btn" download>Download PDF</a>
+        </article>
+        <article class="resume-card">
+          <h3>PHP & Laravel</h3>
+          <p>Focused on Laravel, PHP backend, and full-stack web development roles.</p>
+          <a href="/assets/Ankush_Tyagi_Resume_Laravel.pdf" class="btn" download>Download PDF</a>
+        </article>
+      </div>
+
+      <div class="panel" style="margin-top: 2rem;">
+        <h2 class="section-title">Quick Facts</h2>
+        <ul class="list">
+          <li><strong>Contact:</strong> <a href="tel:+918979149318">+91-8979149318</a> | <a href="mailto:getankushtyagi@gmail.com">getankushtyagi@gmail.com</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/getankushtyagi" target="_blank" rel="noreferrer">github.com/getankushtyagi</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ankush-tyagi/" target="_blank" rel="noreferrer">linkedin.com/in/ankush-tyagi/</a></li>
+          <li><strong>Portfolio:</strong> <a href="https://www.iamankush.info/" target="_blank" rel="noreferrer">www.iamankush.info</a></li>
+          <li><strong>Education:</strong> B.Tech in Computer Science, Moradabad Institute of Technology (2022), 80%</li>
+          <li><strong>Languages:</strong> English (Professional Proficiency), Hindi (Native)</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Ankush Tyagi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
