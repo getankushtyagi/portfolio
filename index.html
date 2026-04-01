@@ -16,7 +16,6 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="logo" href="#home">AT</a>
-      <button class="theme-btn" id="themeBtn" type="button" aria-label="Enable light theme">Light</button>
       <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
       <nav id="siteNav" class="site-nav">
         <a href="#home" data-nav="home"><span class="ni" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>Home</a>
@@ -32,6 +31,8 @@
 
   <main>
     <section id="home" class="hero section">
+      <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div>
           <p class="eyebrow reveal">SENIOR SOFTWARE DEVELOPER</p>
@@ -56,7 +57,7 @@
 
     <section id="skills" class="section">
       <div class="container">
-        <h2 class="section-title">Core Expertise</h2>
+        <h2 class="section-title reveal">Core Expertise</h2>
         <div class="cards three">
           <article class="card reveal">
             <h3>Python Engineering</h3>
@@ -97,7 +98,7 @@
     <section id="about" class="section">
       <div class="container">
         <div class="page-head">
-          <h2 class="page-title">About Me</h2>
+          <h2 class="page-title reveal">About Me</h2>
           <p class="page-subtitle">Senior Software Developer with 4+ years of experience building cloud-native backend systems, AI-driven products, and scalable platforms across Python, Node.js, and Laravel.</p>
         </div>
         <div class="cards three">
@@ -120,7 +121,7 @@
     <section id="projects" class="section">
       <div class="container">
         <div class="page-head">
-          <h2 class="page-title">Selected Projects</h2>
+          <h2 class="page-title reveal">Selected Projects</h2>
           <p class="page-subtitle">Production and domain-driven systems built across AI, HR intelligence, health operations, commerce, and internal automation.</p>
         </div>
         <div class="cards three">
@@ -144,14 +145,14 @@
 
     <section id="experience" class="section">
       <div class="container">
-        <div class="page-head"><h2 class="page-title">Experience</h2></div>
+        <div class="page-head"><h2 class="page-title reveal">Experience</h2></div>
         <div class="timeline">
-          <article class="panel timeline-item">
+          <article class="panel timeline-item reveal">
             <h3>Senior Software Engineer L2 - Squareboat Solutions Pvt. Ltd.</h3>
             <p>Apr 2023 - Present | Gurugram</p>
             <p>Architected Django and DRF services for 10,000+ concurrent users with sub-200ms response times, built AI features, and deployed secure AWS services with Kafka-driven workflows.</p>
           </article>
-          <article class="panel timeline-item">
+          <article class="panel timeline-item reveal">
             <h3>Associate Software Developer - ValueCoders Services LLP</h3>
             <p>Jan 2022 - Apr 2023 | Noida</p>
             <p>Built APIs with Python, Django, and Laravel; improved PostgreSQL query performance by 40% and delivered zero-downtime releases through CI/CD pipelines.</p>
@@ -162,17 +163,38 @@
 
     <section id="resume" class="section">
       <div class="container">
-        <div class="page-head"><h2 class="page-title">Resume Library</h2></div>
+        <div class="page-head"><h2 class="page-title reveal">Resume Library</h2></div>
         <div class="resume-grid">
-          <article class="resume-card"><h3>Django & Python</h3><p>Backend engineering, AI systems, and full-stack Python roles.</p><a href="./assets/Ankush_Tyagi_Resume_Django.pdf" class="btn" download>Download PDF</a></article>
-
+          <article class="resume-card reveal">
+            <div class="resume-card-top">
+              <span class="resume-badge">Primary Resume</span>
+              <span class="resume-year">Updated 2025</span>
+            </div>
+            <div class="resume-icon-row">
+              <div class="resume-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <div>
+                <h3 class="resume-card-title">Django &amp; Python</h3>
+                <p class="resume-card-sub">Backend &middot; AI Systems &middot; Cloud</p>
+              </div>
+            </div>
+            <p class="resume-card-desc">Backend engineering, AI systems integration, LLM-powered products, and full-stack Python engineering roles at scale.</p>
+            <div class="resume-tags">
+              <span>Django</span><span>Python</span><span>AI / LLM</span><span>REST APIs</span><span>AWS</span><span>Kafka</span>
+            </div>
+            <a href="./assets/Ankush_Tyagi_Resume_Django.pdf" class="btn btn-download" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download PDF
+            </a>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="contact" class="section">
       <div class="container">
-        <div class="page-head"><h2 class="page-title">Contact</h2></div>
+        <div class="page-head"><h2 class="page-title reveal">Contact</h2></div>
         <div class="contact-grid">
           <form class="contact-form" id="contactForm" name="contact" method="POST" netlify>
             <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required /></div>
@@ -199,6 +221,7 @@
     </div>
   </footer>
 
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Enable light theme">Light</button>
   <script src="./script.js"></script>
 </body>
 </html>

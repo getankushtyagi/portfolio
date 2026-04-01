@@ -38,6 +38,7 @@ body.theme-light {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 section[id] {
@@ -149,6 +150,12 @@ a:hover {
   background: var(--nav-hover-bg);
 }
 
+@media (min-width: 941px) {
+  .site-nav a.active {
+    box-shadow: inset 0 -2px 0 var(--accent);
+  }
+}
+
 .menu-btn {
   display: none;
   border: 1px solid var(--line);
@@ -184,6 +191,36 @@ a:hover {
 
 .hero {
   padding-top: 5.2rem;
+  position: relative;
+  overflow: clip;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(72px);
+  pointer-events: none;
+  animation: orb-float 9s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.hero-orb-1 {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, var(--accent), transparent 70%);
+  opacity: 0.11;
+  top: -100px;
+  right: -60px;
+}
+
+.hero-orb-2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--accent-2), transparent 70%);
+  opacity: 0.09;
+  bottom: 0;
+  left: -60px;
+  animation-delay: -4.5s;
 }
 
 .hero-grid {
@@ -191,6 +228,8 @@ a:hover {
   grid-template-columns: 1.3fr 1fr;
   gap: 2.2rem;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .eyebrow {
@@ -232,11 +271,28 @@ a:hover {
   padding: 0.7rem 1rem;
   border-radius: 10px;
   font-weight: 700;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.5s ease;
+  pointer-events: none;
 }
 
 .btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover::after {
+  transform: translateX(120%);
 }
 
 .btn-ghost {
@@ -252,6 +308,24 @@ a:hover {
   background: var(--card);
   box-shadow: var(--shadow);
   padding: 1.2rem;
+  transition: transform 0.28s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.45);
+  border-color: rgba(56, 194, 178, 0.4);
+}
+
+.hero-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(56, 194, 178, 0.25);
+}
+
+.panel:hover {
+  transform: translateX(5px);
+  border-left: 3px solid var(--accent);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
 }
 
 .hero-card h2 {
@@ -373,6 +447,15 @@ a:hover {
   transition: border-color 0.2s ease;
 }
 
+body.theme-light .contact-form input,
+body.theme-light .contact-form textarea {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+body.theme-light .resume-tags span {
+  background: rgba(31, 26, 23, 0.05);
+}
+
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
@@ -423,39 +506,162 @@ a:hover {
 
 /* Resume Cards */
 .resume-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 480px);
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  max-width: 600px;
+  margin: 2rem auto 0;
 }
 
 .resume-card {
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 20px;
   background: var(--card);
-  padding: 1.6rem;
+  padding: 2rem;
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
+  gap: 1.4rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+}
+
+.resume-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.resume-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(56, 194, 178, 0.35);
+}
+
+.resume-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resume-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(245, 138, 75, 0.14);
+  border: 1px solid rgba(245, 138, 75, 0.32);
+  color: var(--accent);
+  padding: 0.22rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  animation: badge-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s both;
+}
+
+.resume-year {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.resume-icon-row {
+  display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
-.resume-card h3 {
+.resume-icon {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(56, 194, 178, 0.14), rgba(245, 138, 75, 0.08));
+  border: 1px solid rgba(56, 194, 178, 0.22);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-2);
+}
+
+.resume-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.resume-card-title {
   margin: 0;
   font-family: "Fraunces", serif;
+  font-size: 1.45rem;
   color: var(--ink);
 }
 
-.resume-card p {
-  margin: 0;
+.resume-card-sub {
+  margin: 0.2rem 0 0;
   color: var(--muted);
-  flex-grow: 1;
+  font-size: 0.88rem;
+  font-weight: 500;
 }
 
-.resume-card .btn {
-  align-self: flex-start;
-  margin-top: 0.5rem;
+.resume-card-desc {
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.65;
+}
+
+.resume-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.resume-tags span {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+  padding: 0.22rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.resume-tags span:hover {
+  color: var(--accent-2);
+  border-color: rgba(56, 194, 178, 0.5);
+  background: rgba(56, 194, 178, 0.08);
+}
+
+.btn-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #0d1217 !important;
+  border: none;
+  padding: 0.9rem 1.6rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-download svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.btn-download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(245, 138, 75, 0.4);
+  color: #0d1217 !important;
+}
+
+.btn-download::after {
+  display: none;
 }
 
 #progbar {
@@ -473,11 +679,41 @@ a:hover {
 
 .reveal {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(18px);
+}
+
+.panel.reveal {
+  transform: translateX(-24px);
 }
 
 .reveal.in-view {
-  animation: rise 0.6s ease forwards;
+  animation: rise 0.65s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.panel.reveal.in-view {
+  animation: slide-in-left 0.65s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.page-title.reveal,
+.section-title.reveal {
+  position: relative;
+}
+
+.page-title.reveal::after,
+.section-title.reveal::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 2px;
+  margin-top: 6px;
+  transition: width 0.8s cubic-bezier(0.25, 1, 0.5, 1) 0.5s;
+}
+
+.page-title.reveal.in-view::after,
+.section-title.reveal.in-view::after {
+  width: 52px;
 }
 
 @keyframes rise {
@@ -487,7 +723,38 @@ a:hover {
   }
 }
 
+@keyframes slide-in-left {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes orb-float {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(22px, -30px) scale(1.04); }
+}
+
+@keyframes badge-pop {
+  from { opacity: 0; transform: scale(0.72); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 @media (max-width: 940px) {
+  .hero-orb-1 {
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    right: -30px;
+  }
+
+  .hero-orb-2 {
+    width: 200px;
+    height: 200px;
+    bottom: 0;
+    left: -30px;
+  }
+
   .hero-grid,
   .cards.three,
   .resume-grid,
@@ -503,15 +770,17 @@ a:hover {
 
   .site-nav {
     position: absolute;
-    left: 4%;
-    right: 4%;
-    top: 74px;
+    left: 12px;
+    right: 12px;
+    top: 72px;
     flex-direction: column;
     background: var(--mobile-nav-bg);
     padding: 0.7rem;
     border: 1px solid var(--line);
-    border-radius: 12px;
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     display: none;
+    z-index: 50;
   }
 
   .site-nav.open {
@@ -611,14 +880,27 @@ a:hover {
 
 @media (prefers-reduced-motion: reduce) {
   .reveal,
-  .reveal.in-view {
+  .reveal.in-view,
+  .hero-orb {
     opacity: 1;
     transform: none;
     animation: none;
   }
 
+  .page-title.reveal::after,
+  .section-title.reveal::after {
+    transition: none;
+    width: 52px;
+  }
+
   .btn,
-  .site-nav a {
+  .btn::after,
+  .site-nav a,
+  .card,
+  .panel,
+  .hero-card,
+  .resume-card,
+  .resume-tags span {
     transition: none;
   }
 }
