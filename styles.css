@@ -548,6 +548,7 @@ section:has(.url-shortener) {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  height: 460px;
 }
 
 .tool-card::before {
@@ -596,7 +597,49 @@ section:has(.url-shortener) {
   line-height: 1.6;
   position: relative;
   z-index: 1;
-  flex-grow: 1;
+}
+
+.tool-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(56, 194, 178, 0.35) transparent;
+}
+
+.tool-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tool-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tool-body::-webkit-scrollbar-thumb {
+  background: rgba(56, 194, 178, 0.35);
+  border-radius: 4px;
+}
+
+.k8s-card .tool-body::-webkit-scrollbar-thumb {
+  background: rgba(80, 150, 230, 0.4);
+}
+
+.k8s-card .tool-body {
+  scrollbar-color: rgba(80, 150, 230, 0.4) transparent;
+}
+
+.kafka-card .tool-body::-webkit-scrollbar-thumb {
+  background: rgba(245, 138, 75, 0.4);
+}
+
+.kafka-card .tool-body {
+  scrollbar-color: rgba(245, 138, 75, 0.4) transparent;
 }
 
 .tool-badge {
@@ -671,7 +714,162 @@ body.theme-light .tool-card {
 body.theme-light .tool-card:hover {
   border-color: rgba(15, 139, 141, 0.4);
   box-shadow: 0 20px 48px rgba(15, 139, 141, 0.12);
-}\n\n.site-footer {
+}
+
+/* Kafka card */
+.kafka-card {
+  border-color: rgba(245, 138, 75, 0.3);
+}
+
+.kafka-card::before {
+  background: radial-gradient(circle, rgba(245, 138, 75, 0.12), transparent 70%);
+}
+
+.kafka-card::after {
+  background: radial-gradient(circle, rgba(138, 75, 245, 0.08), transparent 70%);
+}
+
+.kafka-card:hover {
+  box-shadow: 0 20px 48px rgba(245, 138, 75, 0.2);
+  border-color: rgba(245, 138, 75, 0.55);
+}
+
+.kafka-badge {
+  background: rgba(245, 138, 75, 0.15);
+  border-color: rgba(245, 138, 75, 0.35);
+  color: var(--accent);
+}
+
+body.theme-light .kafka-badge {
+  background: rgba(232, 106, 51, 0.1);
+  border-color: rgba(232, 106, 51, 0.28);
+  color: var(--accent);
+}
+
+.kafka-concepts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  position: relative;
+  z-index: 1;
+}
+
+.kafka-concepts li {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.kafka-concepts li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.kafka-btn {
+  background: linear-gradient(135deg, var(--accent), #e87b30);
+  box-shadow: 0 6px 16px rgba(245, 138, 75, 0.35);
+}
+
+.kafka-btn:hover {
+  background: linear-gradient(135deg, #e87b30, var(--accent));
+  box-shadow: 0 10px 24px rgba(245, 138, 75, 0.45);
+}
+
+body.theme-light .kafka-card {
+  border-color: rgba(232, 106, 51, 0.28);
+}
+
+body.theme-light .kafka-card:hover {
+  border-color: rgba(232, 106, 51, 0.5);
+  box-shadow: 0 20px 48px rgba(232, 106, 51, 0.15);
+}
+
+body.theme-light .kafka-btn {
+  background: linear-gradient(135deg, var(--accent), #d4651e);
+  box-shadow: 0 6px 16px rgba(232, 106, 51, 0.3);
+}
+
+body.theme-light .kafka-btn:hover {
+  box-shadow: 0 10px 24px rgba(232, 106, 51, 0.4);
+}
+
+/* Kubernetes card */
+.k8s-card {
+  border-color: rgba(80, 150, 230, 0.3);
+}
+
+.k8s-card::before {
+  background: radial-gradient(circle, rgba(80, 150, 230, 0.12), transparent 70%);
+}
+
+.k8s-card::after {
+  background: radial-gradient(circle, rgba(56, 194, 178, 0.08), transparent 70%);
+}
+
+.k8s-card:hover {
+  box-shadow: 0 20px 48px rgba(80, 150, 230, 0.2);
+  border-color: rgba(80, 150, 230, 0.55);
+}
+
+.k8s-badge {
+  background: rgba(80, 150, 230, 0.15);
+  border-color: rgba(80, 150, 230, 0.35);
+  color: #7db8f5;
+}
+
+body.theme-light .k8s-badge {
+  background: rgba(37, 99, 190, 0.1);
+  border-color: rgba(37, 99, 190, 0.28);
+  color: #2563be;
+}
+
+.k8s-concepts li::before {
+  color: #7db8f5;
+}
+
+body.theme-light .k8s-concepts li::before {
+  color: #2563be;
+}
+
+.k8s-btn {
+  background: linear-gradient(135deg, #5096e6, #2d6fcc);
+  box-shadow: 0 6px 16px rgba(80, 150, 230, 0.35);
+  color: #fff !important;
+}
+
+.k8s-btn:hover {
+  background: linear-gradient(135deg, #2d6fcc, #5096e6);
+  box-shadow: 0 10px 24px rgba(80, 150, 230, 0.45);
+  color: #fff !important;
+}
+
+body.theme-light .k8s-card {
+  border-color: rgba(37, 99, 190, 0.25);
+}
+
+body.theme-light .k8s-card:hover {
+  border-color: rgba(37, 99, 190, 0.45);
+  box-shadow: 0 20px 48px rgba(37, 99, 190, 0.15);
+}
+
+body.theme-light .k8s-btn {
+  background: linear-gradient(135deg, #2563be, #1a4fa0);
+  box-shadow: 0 6px 16px rgba(37, 99, 190, 0.3);
+  color: #fff !important;
+}
+
+body.theme-light .k8s-btn:hover {
+  box-shadow: 0 10px 24px rgba(37, 99, 190, 0.4);
+}
+
+.site-footer {
   border-top: 1px solid var(--line);
   padding: 1.1rem 0 2.2rem;
   color: var(--muted);
@@ -1063,6 +1261,11 @@ body.theme-light .resume-tags span {
 
   .tool-card {
     padding: 1.6rem;
+    height: auto;
+  }
+
+  .tool-body {
+    max-height: 260px;
   }
 
   .url-shortener {
@@ -1180,6 +1383,7 @@ body.theme-light .resume-tags span {
 
   .tool-card {
     padding: 1.4rem;
+    height: auto;
   }
 
   .tool-card h3 {
